@@ -17,7 +17,8 @@ public class Cavalier {
 
     public Cavalier(Echiquier echiquier, int x, int y) {
         this.echiquier = echiquier;
-        this.position = new Point(x, y); // Initialiser la position du cavalier
+        this.position = new Point(x, y);
+       // Initialiser la position du cavalier
     }
 
     private boolean isValidMove(int row, int col) {

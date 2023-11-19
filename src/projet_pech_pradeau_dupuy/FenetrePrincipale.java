@@ -35,7 +35,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 }
             });
         PanelEchiquier.add(bouton_cellule);
-        CavalierGraphique bouton_joueur = new CavalierGraphique(joueur,10,10,1,1);
+        
+        if (i==0 && j==0) {
+            this.joueur = new Cavalier (echiquier, i,j);
+           CavalierGraphique joueurg = new CavalierGraphique(echiquier.grid[i][j],joueur,i,j,20,20);
+            PanelEchiquier.remove(bouton_cellule);
+           PanelEchiquier.add(joueurg);
+       }
             }
         }
     }

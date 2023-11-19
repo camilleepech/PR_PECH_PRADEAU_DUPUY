@@ -13,19 +13,22 @@ import javax.swing.JButton;
  * @author Camille
  */
 public class CavalierGraphique extends JButton {
+    Case caseAssociee;
     Cavalier cavalierAssocie;
     int largeur;
     int longueur;
     int ligne;
     int colonne;
 
-    public CavalierGraphique(Cavalier cavalierAssocie, int largeur, int longueur, int ligne, int colonne) {
+    public CavalierGraphique(Case caseAssociee, Cavalier cavalierAssocie, int largeur, int longueur, int ligne, int colonne) {
+        this.caseAssociee = caseAssociee;
         this.cavalierAssocie = cavalierAssocie;
         this.largeur = largeur;
         this.longueur = longueur;
         this.ligne = ligne;
         this.colonne = colonne;
     }
+
 
     public int getLigne() {
         return ligne;
