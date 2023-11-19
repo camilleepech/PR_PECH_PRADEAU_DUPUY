@@ -14,15 +14,31 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class FenetrePrincipale extends javax.swing.JFrame {
-
+    Echiquier echiquier;
+    Cavalier joueur;
     /**
      * Creates new form FenetrePrincipale
      */
     public FenetrePrincipale() {
         initComponents();
-        
+        int taille = 10;
+            this.echiquier= new Echiquier(taille);
+        PanelEchiquier.setLayout(new GridLayout(taille, taille));
+        for (int i=0; i < taille; i++) {
+        for (int j=0; j < taille; j++ ) {
+        CaseGraphique bouton_cellule = new CaseGraphique( echiquier.grid[i][j], 1440/taille,1080/taille,i ,j);
+            bouton_cellule.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Appeler votre fonction ici
+                    onCaseClicked(bouton_cellule);
+                }
+            });
+        PanelEchiquier.add(bouton_cellule);
+        CavalierGraphique bouton_joueur = new CavalierGraphique(joueur,10,10,1,1);
+            }
+        }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,75 +48,26 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Echiquier = new javax.swing.JPanel();
-        BoutonVerticaux = new javax.swing.JPanel();
-        BoutonHorizontaux = new javax.swing.JPanel();
+        PanelEchiquier = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Echiquier.setBackground(new java.awt.Color(255, 153, 0));
+        PanelEchiquier.setBackground(new java.awt.Color(255, 153, 0));
+        PanelEchiquier.setMaximumSize(new java.awt.Dimension(1440, 1080));
 
-        javax.swing.GroupLayout EchiquierLayout = new javax.swing.GroupLayout(Echiquier);
-        Echiquier.setLayout(EchiquierLayout);
-        EchiquierLayout.setHorizontalGroup(
-            EchiquierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+        javax.swing.GroupLayout PanelEchiquierLayout = new javax.swing.GroupLayout(PanelEchiquier);
+        PanelEchiquier.setLayout(PanelEchiquierLayout);
+        PanelEchiquierLayout.setHorizontalGroup(
+            PanelEchiquierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
         );
-        EchiquierLayout.setVerticalGroup(
-            EchiquierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-
-        BoutonVerticaux.setBackground(new java.awt.Color(255, 255, 153));
-
-        javax.swing.GroupLayout BoutonVerticauxLayout = new javax.swing.GroupLayout(BoutonVerticaux);
-        BoutonVerticaux.setLayout(BoutonVerticauxLayout);
-        BoutonVerticauxLayout.setHorizontalGroup(
-            BoutonVerticauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 25, Short.MAX_VALUE)
-        );
-        BoutonVerticauxLayout.setVerticalGroup(
-            BoutonVerticauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
+        PanelEchiquierLayout.setVerticalGroup(
+            PanelEchiquierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
-        BoutonHorizontaux.setBackground(new java.awt.Color(255, 255, 204));
-
-        javax.swing.GroupLayout BoutonHorizontauxLayout = new javax.swing.GroupLayout(BoutonHorizontaux);
-        BoutonHorizontaux.setLayout(BoutonHorizontauxLayout);
-        BoutonHorizontauxLayout.setHorizontalGroup(
-            BoutonHorizontauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        BoutonHorizontauxLayout.setVerticalGroup(
-            BoutonHorizontauxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 21, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(BoutonVerticaux, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BoutonHorizontaux, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Echiquier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(218, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(BoutonHorizontaux, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BoutonVerticaux, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Echiquier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(145, Short.MAX_VALUE))
-        );
+        getContentPane().add(PanelEchiquier, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 620, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,13 +103,19 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FenetrePrincipale().setVisible(true);
-            }
-        });
+            }}
+        );
     }
-
+private void onCaseClicked(CaseGraphique caseCliquee) {
+    // Mettez ici le code que vous souhaitez exécuter lorsque la case est cliquée
+    System.out.println("Case cliquée : " + caseCliquee);
+     int ligne = caseCliquee.getLigne();
+     int colonne = caseCliquee.getColonne();
+    echiquier.grid[ligne][colonne].allumer();
+    
+    // Ajoutez votre logique de jeu ici
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BoutonHorizontaux;
-    private javax.swing.JPanel BoutonVerticaux;
-    private javax.swing.JPanel Echiquier;
+    private javax.swing.JPanel PanelEchiquier;
     // End of variables declaration//GEN-END:variables
 }
