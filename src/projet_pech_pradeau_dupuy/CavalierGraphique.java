@@ -7,6 +7,9 @@ package projet_pech_pradeau_dupuy;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JButton;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -19,6 +22,7 @@ public class CavalierGraphique extends JButton {
     int longueur;
     int ligne;
     int colonne;
+    private ImageIcon icon;
 
     public CavalierGraphique(Case caseAssociee, Cavalier cavalierAssocie, int largeur, int longueur, int ligne, int colonne) {
         this.caseAssociee = caseAssociee;
@@ -27,6 +31,14 @@ public class CavalierGraphique extends JButton {
         this.longueur = longueur;
         this.ligne = ligne;
         this.colonne = colonne;
+         try {
+    icon = new ImageIcon("Image bienvenue.png");
+} catch (Exception e) {
+    e.printStackTrace();
+}
+        // Configurer la taille du bouton
+        setSize(largeur, longueur);
+
     }
 
 
@@ -49,7 +61,11 @@ public class CavalierGraphique extends JButton {
      protected void paintComponent(Graphics g) {
     int w = this.getWidth();
     int h = this.getHeight();
-     g.fillOval(2, 2, w - 4, h - 4);
+      super.paintComponent(g);
+// Dessiner l'image
+        Image image = icon.getImage();
+        g.drawImage(image, 0,0, getWidth(), getHeight(), this);
      g.setColor(Color.BLACK);
+    
     }
 }
