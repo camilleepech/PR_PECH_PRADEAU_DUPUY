@@ -13,6 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Point;
 public class FenetrePrincipale extends javax.swing.JFrame {
     Echiquier echiquier;
     Cavalier joueur;
@@ -115,19 +116,25 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         );
     }
 private void onCaseClicked(CaseGraphique caseCliquee) {
-    // Mettez ici le code que vous souhaitez exécuter lorsque la case est cliquée
-    System.out.println("Case cliquée : " + caseCliquee);
-    joueur.movebasdroite();
-    joueur.movegauchehaut();
     System.out.println(joueur.position);
-    repaint();
     int ligne = caseCliquee.getLigne();
     int colonne = caseCliquee.getColonne();
-    
-     
+    Point point = joueur.getPosition();
+    int c = (int) point.getX();
+    int d = (int) point.getY();
     echiquier.grid[ligne][colonne].allumer();
-    
-    // Ajoutez votre logique de jeu ici
+    joueur.verif(c, d, ligne, colonne);
+    if (joueur.verif(c, d, ligne, colonne)==true){
+        Point newcoord = new Point(ligne,colonne);
+        joueur.setPosition(newcoord);
+        PanelEchiquier.remove(caseCliquee);
+        CavalierGraphique joueurg = new CavalierGraphique(echiquier.grid[ligne][colonne], joueur, 30, 30, ligne, colonne);
+        PanelEchiquier.add(joueurg);
+    }
+    System.out.println(joueur.position);
+
+    repaint();
+   
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelEchiquier;
