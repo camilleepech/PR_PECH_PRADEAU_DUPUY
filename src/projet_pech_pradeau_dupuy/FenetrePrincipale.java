@@ -36,12 +36,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             });
         PanelEchiquier.add(bouton_cellule);
         
-        if (i==2 && j==2) {
+        
+        if (i==5&& j==5) {
             this.joueur = new Cavalier (echiquier, i,j);
            CavalierGraphique joueurg = new CavalierGraphique(echiquier.grid[i][j],joueur,30,30,i,j);
             PanelEchiquier.remove(bouton_cellule);
            PanelEchiquier.add(joueurg);
        }
+        
             }
         }
     }
@@ -115,8 +117,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 private void onCaseClicked(CaseGraphique caseCliquee) {
     // Mettez ici le code que vous souhaitez exécuter lorsque la case est cliquée
     System.out.println("Case cliquée : " + caseCliquee);
-     int ligne = caseCliquee.getLigne();
-     int colonne = caseCliquee.getColonne();
+    joueur.movebasdroite();
+    joueur.movegauchehaut();
+    System.out.println(joueur.position);
+    repaint();
+    int ligne = caseCliquee.getLigne();
+    int colonne = caseCliquee.getColonne();
+    
+     
     echiquier.grid[ligne][colonne].allumer();
     
     // Ajoutez votre logique de jeu ici
