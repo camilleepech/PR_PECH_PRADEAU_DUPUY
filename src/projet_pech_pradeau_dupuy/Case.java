@@ -9,20 +9,29 @@ package projet_pech_pradeau_dupuy;
  * @author Camille
  */
 public class Case {
-    private boolean allumee;
+    int etat;
     
     public Case(){
-        this.allumee = false;
+        this.etat = 1;
+    }
+
+    public int getEtat() {
+        return etat;
+    }
+
+    public void setEtat(int etat) {
+        this.etat = etat;
     }
     
-    public boolean estAllumee(){
-        return allumee;
-    }
+   
     public void eteindre(){
-    allumee=false;
+    etat=1;
     }
      public void allumer(){
-    allumee=true;
+    etat=2;
+    }
+ public void cavalier(){
+    etat=3;
     }
 
 

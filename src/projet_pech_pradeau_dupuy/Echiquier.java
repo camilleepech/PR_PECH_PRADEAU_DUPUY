@@ -36,10 +36,12 @@ public class Echiquier {
  //       }
   //  }
 
+ 
     public boolean estAllumee(int ligne, int colonne) {
         // Vérifier si la case à la position donnée est allumée
         if (ligne >= 0 && ligne < taille && colonne >= 0 && colonne < taille) {
-            return grid[ligne][colonne].estAllumee();
+            if (grid[ligne][colonne].getEtat()==2);
+            return true;
         } else {
             // Gérer les coordonnées invalides (peut être adapté en fonction de vos besoins)
             System.out.println("Coordonnées invalides.");
@@ -48,26 +50,33 @@ public class Echiquier {
     }
     public void allumerCase(int ligne, int colonne) {
         // Éteindre la case à la position donnée
-        if (ligne >= 0 && ligne < taille && colonne >= 0 && colonne < taille) {
+        if (ligne >= 0 && ligne < taille && colonne >= 0 && colonne <= taille) {
             grid[ligne][colonne].allumer();
         } else {
             // Gérer les coordonnées invalides
-            System.out.println("Coordonnées invalides.");
+            System.out.println("Coordonnées invalides .");
         }
     }
 
     public void eteindreCase(int ligne, int colonne) {
         // Éteindre la case à la position donnée
-        if (ligne >= 0 && ligne < taille && colonne >= 0 && colonne < taille) {
+        if (ligne >= 0 && ligne < taille && colonne >= 0 && colonne <= taille) {
             grid[ligne][colonne].eteindre();
         } else {
             // Gérer les coordonnées invalides
-            System.out.println("Coordonnées invalides.");
+            System.out.println("Coordonnées invalides .");
         }
     }
-    public void parcours (){
-      
-    }
+     public void CaseCavalier(int ligne, int colonne) {
+        // Éteindre la case à la position donnée
+       // if (ligne >= 0 && ligne < taille && colonne >= 0 && colonne <= taille) {
+            grid[ligne][colonne].cavalier();
+       // } else {
+         //   // Gérer les coordonnées invalides
+           // System.out.println("Coordonnées invalides.");
+        }
+    
+
     
 
     // Ajoutez d'autres méthodes selon les besoins de votre jeu

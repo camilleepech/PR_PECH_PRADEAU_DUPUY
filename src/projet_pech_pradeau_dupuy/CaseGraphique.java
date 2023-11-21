@@ -47,10 +47,13 @@ public class CaseGraphique extends JButton {
     protected void paintComponent(Graphics g) {
     int w = this.getWidth();
     int h = this.getHeight();
-    if (caseAssociee.estAllumee() == true) {
+    if (caseAssociee.getEtat() == 1) {
     g.setColor(Color.getHSBColor(340, 33, 100));
-    } else {
+    } if(caseAssociee.getEtat()==2){
     g.setColor(Color.white);
+    } if (caseAssociee.getEtat()==3) {
+        g.setColor(Color.blue  );
+        
     }
      g.fillRect(2, 2, w - 4, h - 4);
     }

@@ -39,10 +39,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         
         
         if (i==5&& j==5) {
-            this.joueur = new Cavalier (echiquier, i,j);
-           CavalierGraphique joueurg = new CavalierGraphique(echiquier.grid[i][j],joueur,30,30,i,j);
-            PanelEchiquier.remove(bouton_cellule);
-           PanelEchiquier.add(joueurg);
+        echiquier.grid[5][5].setEtat(3);
+        this.joueur = new Cavalier (echiquier, i,j);
+          // CavalierGraphique joueurg = new CavalierGraphique(echiquier.grid[i][j],joueur,30,30,i,j);
+        //    PanelEchiquier.remove(bouton_cellule);
+       //    PanelEchiquier.add(joueurg);
        }
         
             }
@@ -117,19 +118,22 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     }
 private void onCaseClicked(CaseGraphique caseCliquee) {
     System.out.println(joueur.position);
-    int ligne = caseCliquee.getLigne();
-    int colonne = caseCliquee.getColonne();
+    int newligne = caseCliquee.getLigne();
+    int newcolonne = caseCliquee.getColonne();
+    
     Point point = joueur.getPosition();
-    int c = (int) point.getX();
-    int d = (int) point.getY();
-    echiquier.grid[ligne][colonne].allumer();
-    joueur.verif(c, d, ligne, colonne);
-    if (joueur.verif(c, d, ligne, colonne)==true){
-        Point newcoord = new Point(ligne,colonne);
+    int lignecliquee = (int) point.getX();
+    int colonnecliquee = (int) point.getY();
+    joueur.movehautdroite();
+   
+    //int etatverif = echiquier.grid[lignecliquee][colonnecliquee].getEtat();
+    joueur.verif(lignecliquee, colonnecliquee, newligne, newcolonne);
+    if (joueur.verif(lignecliquee, colonnecliquee, newligne, newcolonne)==true){
+        Point newcoord = new Point(newligne,newcolonne);
         joueur.setPosition(newcoord);
-        PanelEchiquier.remove(caseCliquee);
-        CavalierGraphique joueurg = new CavalierGraphique(echiquier.grid[ligne][colonne], joueur, 30, 30, ligne, colonne);
-        PanelEchiquier.add(joueurg);
+       echiquier.grid[lignecliquee][colonnecliquee].setEtat(1);
+        echiquier.grid[newligne][newcolonne].setEtat(3);
+
     }
     System.out.println(joueur.position);
 

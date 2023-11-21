@@ -57,7 +57,7 @@ public class CavalierGraphique extends JButton {
     public void setColonne(int colonne) {
         this.colonne = colonne;
     }
-    
+
      protected void paintComponent(Graphics g) {
     int w = this.getWidth();
     int h = this.getHeight();
