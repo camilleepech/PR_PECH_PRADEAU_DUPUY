@@ -25,6 +25,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         int taille = 10;
             this.echiquier= new Echiquier(taille);
         PanelEchiquier.setLayout(new GridLayout(taille, taille));
+        
         for (int i=0; i < taille; i++) {
         for (int j=0; j < taille; j++ ) {
         CaseGraphique bouton_cellule = new CaseGraphique( echiquier.grid[i][j], 1440/taille,1080/taille,i ,j);
@@ -124,7 +125,7 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
     Point point = joueur.getPosition();
     int lignecliquee = (int) point.getX();
     int colonnecliquee = (int) point.getY();
-    joueur.movehautdroite();
+    //joueur.movehautdroite();
    
     //int etatverif = echiquier.grid[lignecliquee][colonnecliquee].getEtat();
     joueur.verif(lignecliquee, colonnecliquee, newligne, newcolonne);

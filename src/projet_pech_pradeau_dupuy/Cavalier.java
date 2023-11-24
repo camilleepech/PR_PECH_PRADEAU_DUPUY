@@ -67,7 +67,9 @@ public class Cavalier {
     
     }
     public void parcours (int nbmelange){
-        
+       for (int tour = 0; tour < nbmelange; tour++) {
+            mouvementAleatoire();
+        }
     }
     
     public void setPosition(Point position) {
