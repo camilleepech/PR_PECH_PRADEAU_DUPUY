@@ -40,7 +40,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         if (i==7 && j==6){
              echiquier.grid[7][6].setEtat(2);
                 int ligne = echiquier.CoordCavalierX();
-                int colonnes = echiquier.CoordCavalierY();
+                int colonne = echiquier.CoordCavalierY();
+                //echiquier.grid[ligne][colonne].setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cavalier.png")));
+                repaint();
                     
         }
                 if (i==9 && j==7){
