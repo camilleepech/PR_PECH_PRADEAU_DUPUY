@@ -90,6 +90,86 @@ public class Echiquier {
             }
     }
     }
+    private boolean isValidMove(int row, int col) {
+        return row >= 0 && row < getTaille() && col >= 0 && col < getTaille();
+    }
+    public void movehautgauche() {
+        int x = CoordCavalierX();
+        int y = CoordCavalierY();
+        int newRow = x - 2;
+        int newCol = y - 1;
+        
+        if (isValidMove(newRow, newCol)) {
+            grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(2); 
+        }
+    }
+    public void movehautdroite() {
+        int x = CoordCavalierX();
+        int y = CoordCavalierY();
+        int newRow = x - 2;
+        int newCol = y + 1;
+        
+        if (isValidMove(newRow, newCol)) {
+            grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(2);  
+        }
+    }
+    public void movebasgauche() {
+        int x = CoordCavalierX();
+        int y = CoordCavalierY();
+        int newRow = x + 2;
+        int newCol = y - 1;
+        
+        if (isValidMove(newRow, newCol)) {
+            grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(2);
+        }
+    }
+    public void movebasdroite() {
+        int x = CoordCavalierX();
+        int y = CoordCavalierY();
+        int newRow = x + 2;
+        int newCol = y + 1;
+        
+        if (isValidMove(newRow, newCol)) {
+            grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(2);
+        }
+    }
+    public void movegauchehaut() {
+        int x = CoordCavalierX();
+        int y = CoordCavalierY();
+        int newRow = x - 1;
+        int newCol = y - 2;
+        
+        if (isValidMove(newRow, newCol)) {
+            grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(2);  
+        }
+    }
+    public void movegauchebas() {
+        int x = CoordCavalierX();
+        int y = CoordCavalierY();
+        int newRow = x - 1;
+        int newCol = y + 2;
+        
+        if (isValidMove(newRow, newCol)) {
+            grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(2);
+        }
+    }
+        public void movedroitehaut() {
+        int x = CoordCavalierX();
+        int y = CoordCavalierY();
+        int newRow = x - 1;
+        int newCol = y + 2;
+        
+        if (isValidMove(newRow, newCol)) {
+            grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(2);
+        }
+    }
     public int CoordCavalierX (){
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < taille; j++) {
