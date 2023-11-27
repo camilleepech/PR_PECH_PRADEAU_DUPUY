@@ -33,7 +33,18 @@ public class Case {
  public void cavalier(){
     etat=3;
     }
-
+public boolean presenceLumiere(){
+    if (etat==2){
+        return true;
+    }
+        return false;
+}
+public boolean presenceCavalier(){
+    if (etat==3){
+        return true;
+    }
+        return false;
+}
 
      
 }

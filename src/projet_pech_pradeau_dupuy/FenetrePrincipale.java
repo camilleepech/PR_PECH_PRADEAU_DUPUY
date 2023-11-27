@@ -37,11 +37,16 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 }
             });
         PanelEchiquier.add(bouton_cellule);
-        
+        if (i==7 && j==6){
+             echiquier.grid[7][6].setEtat(2);
+        }
+                if (i==9 && j==7){
+             echiquier.grid[9][7].setEtat(2);
+        }
         
         if (i==5&& j==5) {
         echiquier.grid[5][5].setEtat(3);
-        this.joueur = new Cavalier (echiquier, i,j);
+        //this.joueur = new Cavalier (echiquier, i,j);
           // CavalierGraphique joueurg = new CavalierGraphique(echiquier.grid[i][j],joueur,30,30,i,j);
         //    PanelEchiquier.remove(bouton_cellule);
        //    PanelEchiquier.add(joueurg);
@@ -118,27 +123,29 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         );
     }
 private void onCaseClicked(CaseGraphique caseCliquee) {
-    System.out.println(joueur.position);
+   // System.out.println(joueur.position);
     int newligne = caseCliquee.getLigne();
     int newcolonne = caseCliquee.getColonne();
     
-    Point point = joueur.getPosition();
-    int lignecliquee = (int) point.getX();
-    int colonnecliquee = (int) point.getY();
+   // Point point = joueur.getPosition();
+    int ligne = echiquier.CoordCavalierX();
+    int colonne = echiquier.CoordCavalierY();
+    
     //joueur.movehautdroite();
-   
+   // echiquier.deplacementPossible(ligne, colonne, newligne, newcolonne);
     //int etatverif = echiquier.grid[lignecliquee][colonnecliquee].getEtat();
-    joueur.verif(lignecliquee, colonnecliquee, newligne, newcolonne);
-    if (joueur.verif(lignecliquee, colonnecliquee, newligne, newcolonne)==true){
-        Point newcoord = new Point(newligne,newcolonne);
-        joueur.setPosition(newcoord);
-       echiquier.grid[lignecliquee][colonnecliquee].setEtat(1);
+    echiquier.verif(ligne, colonne, newligne, newcolonne);
+   if (echiquier.verif(ligne, colonne, newligne, newcolonne)==true){
+     //   Point newcoord = new Point(newligne,newcolonne);
+       // joueur.setPosition(newcoord);
+       echiquier.grid[ligne][colonne].setEtat(1);
         echiquier.grid[newligne][newcolonne].setEtat(3);
 
-    }
-    System.out.println(joueur.position);
+        // }
+   // System.out.println(joueur.position);
 
     repaint();
+   }
    
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables

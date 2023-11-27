@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package projet_pech_pradeau_dupuy;
-
+import java.lang.Math;
 /**
  *
  * @author Raphaël
  */
 public class Echiquier {
    
-    private int taille;
+    private int taille = 10;
     Case[][] grid;
 
     public Echiquier(int taille) {
@@ -75,8 +75,41 @@ public class Echiquier {
          //   // Gérer les coordonnées invalides
            // System.out.println("Coordonnées invalides.");
         }
-    
-
+        public boolean verif(int x,int y,int newx,int newy){
+            int diffx = Math.abs(newx - x);
+            int diffy = Math.abs(newy - y);
+            return (diffx == 2 && diffy == 1) || (diffx == 1 && diffy == 2);
+        }
+    public void deplacementPossible(int x1,int y1,int x2,int y2){
+         int diffx = Math.abs(x1 - x2);
+         int diffy = Math.abs(y1 - y2);
+        if (grid[x1][y1].presenceCavalier()==true && grid[x2][y2].presenceLumiere()==true){
+            if (diffx>=1 && diffy>=1 && diffx+diffy == 3){
+                grid[x1][y1].eteindre();
+                grid[x2][y2].cavalier();
+            }
+    }
+    }
+    public int CoordCavalierX (){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < taille; j++) {
+                if (grid[i][j].etat == 3) {
+                    return i;
+                }
+            }
+        }
+        return 10;
+    }
+        public int CoordCavalierY (){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < taille; j++) {
+                if (grid[i][j].etat == 3){
+                    return j;
+                }
+            }
+        }
+        return 12;
+    }
     
 
     // Ajoutez d'autres méthodes selon les besoins de votre jeu
