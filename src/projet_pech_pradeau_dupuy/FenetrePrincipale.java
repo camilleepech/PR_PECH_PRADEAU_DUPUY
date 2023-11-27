@@ -39,6 +39,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanelEchiquier.add(bouton_cellule);
         if (i==7 && j==6){
              echiquier.grid[7][6].setEtat(2);
+                int ligne = echiquier.CoordCavalierX();
+                int colonnes = echiquier.CoordCavalierY();
+                    
         }
                 if (i==9 && j==7){
              echiquier.grid[9][7].setEtat(2);
