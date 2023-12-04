@@ -4,6 +4,7 @@
  */
 package projet_pech_pradeau_dupuy;
 import java.lang.Math;
+import java.util.Random;
 /**
  *
  * @author Raphaël
@@ -26,15 +27,6 @@ public class Echiquier {
     public int getTaille() {
         return taille;
     }
-
-    //private void initialiserEchiquier() {
-        // Initialiser l'échiquier avec des cases allumées aléatoirement
-      //  for (int i = 0; i < taille; i++) {
-        //    for (int j = 0; j < taille; j++) {
-    //            casesAllumees[i][j] = Math.random() > 0.5;
-      //      }
- //       }
-  //  }
 
  
     public boolean estAllumee(int ligne, int colonne) {
@@ -93,81 +85,126 @@ public class Echiquier {
     private boolean isValidMove(int row, int col) {
         return row >= 0 && row < getTaille() && col >= 0 && col < getTaille();
     }
-    public void movehautgauche() {
-        int x = CoordCavalierX();
-        int y = CoordCavalierY();
+    public void parcours() {
+        int currentX = 5;
+        int currentY = 5;
+        Random random = new Random();
+
+        for (int i = 0; i <10; i++) {
+            int randomDirection= random.nextInt(8); // 8 possible directions
+
+            switch (randomDirection) {
+                case 0 -> movehautgauche(currentX,currentY);
+                case 1 -> movehautdroite(currentX,currentY);
+                case 2 -> movebasgauche(currentX,currentY);
+                case 3 -> movebasdroite(currentX,currentY);
+                case 4 -> movegauchehaut(currentX,currentY);
+                case 5 -> movegauchebas(currentX,currentY);
+                case 6 -> movedroitehaut(currentX,currentY);
+                case 7 -> movedroitebas(currentX,currentY);
+                default -> {
+                }
+                
+            }
+            System.out.println("tour : " +i+1);
+            System.out.println(currentX);
+            System.out.println(currentY);
+            currentX = CoordCavalierX();
+            currentY = CoordCavalierY();
+            grid[currentX][currentY].allumer();
+        }
+         currentX = CoordCavalierX();
+        currentY = CoordCavalierY();
+    //    grid[0][0].eteindre();
+        grid[5][5].cavalier();
+    }
+
+    public void movehautgauche(int x,int y) {
+   //     int x = CoordCavalierX();
+     //   int y = CoordCavalierY();
         int newRow = x - 2;
         int newCol = y - 1;
         
-        if (isValidMove(newRow, newCol)) {
-            grid[x][y].eteindre();
-            grid[newRow][newCol].setEtat(2); 
+        if (isValidMove(newRow, newCol) || (newRow!=5) || (newCol!=5) || (grid[newRow][newCol]).etat!=2) {
+          grid[x][y].allumer();
+            grid[newRow][newCol].setEtat(3); 
         }
     }
-    public void movehautdroite() {
-        int x = CoordCavalierX();
-        int y = CoordCavalierY();
+    public void movehautdroite(int x,int y) {
+    //    int x = CoordCavalierX();
+      //  int y = CoordCavalierY();
         int newRow = x - 2;
         int newCol = y + 1;
         
         if (isValidMove(newRow, newCol)) {
-            grid[x][y].eteindre();
-            grid[newRow][newCol].setEtat(2);  
+          grid[x][y].allumer();
+            grid[newRow][newCol].setEtat(3);  
         }
     }
-    public void movebasgauche() {
-        int x = CoordCavalierX();
-        int y = CoordCavalierY();
+    public void movebasgauche(int x,int y) {
+ //       int x = CoordCavalierX();
+   //     int y = CoordCavalierY();
         int newRow = x + 2;
         int newCol = y - 1;
         
         if (isValidMove(newRow, newCol)) {
-            grid[x][y].eteindre();
-            grid[newRow][newCol].setEtat(2);
+            grid[x][y].allumer();
+            grid[newRow][newCol].setEtat(3);
         }
     }
-    public void movebasdroite() {
-        int x = CoordCavalierX();
-        int y = CoordCavalierY();
+    public void movebasdroite(int x,int y) {
+//        int x = CoordCavalierX();
+  //      int y = CoordCavalierY();
         int newRow = x + 2;
         int newCol = y + 1;
         
         if (isValidMove(newRow, newCol)) {
-            grid[x][y].eteindre();
-            grid[newRow][newCol].setEtat(2);
+           grid[x][y].allumer();
+            grid[newRow][newCol].setEtat(3);
         }
     }
-    public void movegauchehaut() {
-        int x = CoordCavalierX();
-        int y = CoordCavalierY();
+    public void movegauchehaut(int x,int y) {
+  //      int x = CoordCavalierX();
+    //    int y = CoordCavalierY();
         int newRow = x - 1;
         int newCol = y - 2;
         
         if (isValidMove(newRow, newCol)) {
-            grid[x][y].eteindre();
-            grid[newRow][newCol].setEtat(2);  
+            grid[x][y].allumer();
+            grid[newRow][newCol].setEtat(3);  
         }
     }
-    public void movegauchebas() {
-        int x = CoordCavalierX();
-        int y = CoordCavalierY();
+    public void movegauchebas(int x,int y) {
+ //       int x = CoordCavalierX();
+   //     int y = CoordCavalierY();
+        int newRow = x + 1;
+        int newCol = y - 2;
+        
+        if (isValidMove(newRow, newCol)) {
+      //      grid[x][y].eteindre();
+            grid[newRow][newCol].setEtat(3);
+        }
+    }
+        public void movedroitehaut(int x,int y) {
+ //     int x = CoordCavalierX();
+    //    int y = CoordCavalierY();
         int newRow = x - 1;
         int newCol = y + 2;
         
         if (isValidMove(newRow, newCol)) {
-            grid[x][y].eteindre();
-            grid[newRow][newCol].setEtat(2);
+            grid[x][y].allumer();
+            grid[newRow][newCol].setEtat(3);
         }
     }
-        public void movedroitehaut() {
-        int x = CoordCavalierX();
-        int y = CoordCavalierY();
-        int newRow = x - 1;
+                public void movedroitebas(int x,int y) {
+       // int x = CoordCavalierX();
+      //  int y = CoordCavalierY();
+        int newRow = x + 1;
         int newCol = y + 2;
         
         if (isValidMove(newRow, newCol)) {
-            grid[x][y].eteindre();
-            grid[newRow][newCol].setEtat(2);
+            grid[x][y].allumer();
+            grid[newRow][newCol].setEtat(3);
         }
     }
     public int CoordCavalierX (){
@@ -178,7 +215,7 @@ public class Echiquier {
                 }
             }
         }
-        return 10;
+        return 0;
     }
         public int CoordCavalierY (){
         for (int i = 0; i < 10; i++) {
@@ -188,7 +225,7 @@ public class Echiquier {
                 }
             }
         }
-        return 12;
+        return 0;
     }
     
 
