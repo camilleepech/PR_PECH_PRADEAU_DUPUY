@@ -163,6 +163,8 @@ public class Echiquier {
             grid[newRow][newCol].setEtat(3);
         }
     }
+    
+    //
     public void movegauchehaut(int x,int y) {
   //      int x = CoordCavalierX();
     //    int y = CoordCavalierY();
