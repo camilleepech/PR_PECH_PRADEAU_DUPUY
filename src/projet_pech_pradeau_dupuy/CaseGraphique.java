@@ -7,12 +7,21 @@ package projet_pech_pradeau_dupuy;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JButton;
 
 /**
  *
  * @author Camille
  */
 public class CaseGraphique extends JButton {
+
     Case caseAssociee;
     int largeur;
     int longueur;
@@ -32,8 +41,6 @@ public class CaseGraphique extends JButton {
         return ligne;
     }
 
-
-
     public int getColonne() {
         return colonne;
     }
@@ -42,21 +49,41 @@ public class CaseGraphique extends JButton {
         this.colonne = colonne;
     }
 
-
-   
+    /**
+     *
+     * @param g
+     */
+    @Override
     protected void paintComponent(Graphics g) {
-    int w = this.getWidth();
-    int h = this.getHeight();
-    if (caseAssociee.getEtat() == 1) {
-    g.setColor(Color.getHSBColor(340, 33, 100));
-    } if(caseAssociee.getEtat()==2){
-    g.setColor(Color.white);
-    } if (caseAssociee.getEtat()==3) {
-        g.setColor(Color.blue  );
+        System.out.println(caseAssociee);
+        int w = this.getWidth();
+        int h = this.getHeight();
+        if (caseAssociee.getEtat() == 1) {
+            g.setColor(Color.getHSBColor(340, 33, 100));
+        }
+        if (caseAssociee.getEtat() == 2) {
+            g.setColor(Color.white);
+        }
+                g.fillRect(2, 2, w - 4, h - 4);
+
+        if (caseAssociee.getEtat() == 3) {
+            g.setColor(Color.blue);
+       g.fillRect(2, 2, w - 4, h - 4);
+
         
+        BufferedImage image = null;
+        try {
+             image = ImageIO.read(new File("./src/Images/cavalier.png"));
+        } catch (IOException e) {
+            System.out.println(e.getCause());
+            e.printStackTrace();
+
+        }
+      //  g.fillRect(4, 4, 40, 40);
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
+        ///g.setColor(Color.red);
+
     }
-     g.fillRect(2, 2, w - 4, h - 4);
     }
-    
-    
 }
+

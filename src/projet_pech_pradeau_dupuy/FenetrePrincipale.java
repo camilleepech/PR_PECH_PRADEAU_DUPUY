@@ -58,6 +58,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelEchiquier = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,6 +78,19 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         );
 
         getContentPane().add(PanelEchiquier, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 620, 560));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1030, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -143,5 +157,7 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelEchiquier;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
+
