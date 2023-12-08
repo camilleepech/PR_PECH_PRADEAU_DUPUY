@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.Point;
 public class FenetrePrincipale extends javax.swing.JFrame {
     Echiquier echiquier;
-    Cavalier joueur;
+   
     /**
      * Creates new form FenetrePrincipale
      */

@@ -85,7 +85,7 @@ public class Echiquier {
     private boolean isValidMove(int row, int col) {
         return row >= 0 && row < getTaille() && col >= 0 && col < getTaille();
     }
-    public void parcours() {
+    public void parcours0() {
         int currentX = 5;
         int currentY = 5;
         Random random = new Random();
@@ -120,17 +120,67 @@ public class Echiquier {
     //    grid[0][0].eteindre();
         grid[5][5].cavalier();
     }
-    
+     public void parcours() {
+            
+        Random random = new Random();
+        int nb = 1;
+        int cpt=0;
+          int currentX = 5;
+        int currentY = 5;
+        
+         do {
+          eteindreTout();
+          cpt =0;
+          currentX = 5;
+         currentY = 5;
+        grid[currentX][currentY].allumer();
+      
+        for (int i = 0; i <7; i++) {
+            cpt++;
+            int randomDirection= random.nextInt(8); // 8 possible directions
+
+            switch (randomDirection) {
+                case 0 -> movehautgauche(currentX,currentY);
+                case 1 -> movehautdroite(currentX,currentY);
+                case 2 -> movebasgauche(currentX,currentY);
+                case 3 -> movebasdroite(currentX,currentY);
+                case 4 -> movegauchehaut(currentX,currentY);
+                case 5 -> movegauchebas(currentX,currentY);
+                case 6 -> movedroitehaut(currentX,currentY);
+                case 7 -> movedroitebas(currentX,currentY);
+                default -> {
+                }
+                
+            }
+            System.out.println("tour : " +i+1);
+            System.out.println(currentX);
+            System.out.println(currentY);
+            currentX = CoordCavalierX();
+            currentY = CoordCavalierY();
+            grid[currentX][currentY].allumer();
+          //  System.out.println(this);
+            if (i == nombrelum()-1){
+                i--;
+            }
+            if (cpt==100) { break;} 
+        
+        }
+     }
+     while (cpt ==100);
+        
+         currentX = CoordCavalierX();
+        currentY = CoordCavalierY();
+    //    grid[0][0].eteindre();
+        grid[5][5].cavalier();
+    }
     public void parcours1() {
     int currentX = 5;
     int currentY = 5;
     Random random = new Random();
     int tour = 0;
-
+    int nblum = 0;
     while (tour < 10) {
-        int originalX = currentX;
-        int originalY = currentY;
-
+        
         do {
             int randomDirection = random.nextInt(8); // 8 possible directions
 
@@ -154,14 +204,13 @@ public class Echiquier {
             System.out.println(this);
             currentX = CoordCavalierX();
             currentY = CoordCavalierY();
-        } while (currentX == originalX && currentY == originalY);
+        } while (nblum == nombrelum());
 
         tour++;
         
         currentX = CoordCavalierX();
         currentY = CoordCavalierY();
-        originalX = currentX;
-        originalY = currentY;
+        
         
     }
 
@@ -301,7 +350,27 @@ public class Echiquier {
 
         return 0;
     }
-    
+         public void eteindreTout (){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < taille; j++) {
+                grid[i][j].setEtat(1);
+                }
+        }
+    }
+        public int nombrelum (){
+            int nb = 0;
+            for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < taille; j++) {
+                if (grid[i][j].etat == 2){
+                    nb +=1;
+                }
+            }
+        }
+                
+                System.out.println("mince!!!");
+
+        return nb;
+    }
 
     // Ajoutez d'autres méthodes selon les besoins de votre jeu
 
