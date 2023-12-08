@@ -90,7 +90,7 @@ public class Echiquier {
         int currentY = 5;
         Random random = new Random();
 
-        for (int i = 0; i <10; i++) {
+        for (int i = 0; i <30; i++) {
             int randomDirection= random.nextInt(8); // 8 possible directions
 
             switch (randomDirection) {
@@ -112,6 +112,8 @@ public class Echiquier {
             currentX = CoordCavalierX();
             currentY = CoordCavalierY();
             grid[currentX][currentY].allumer();
+              System.out.println(this);
+        
         }
          currentX = CoordCavalierX();
         currentY = CoordCavalierY();
@@ -125,9 +127,11 @@ public class Echiquier {
         int newRow = x - 2;
         int newCol = y - 1;
         
-        if (isValidMove(newRow, newCol) || (newRow!=5) || (newCol!=5) || (grid[newRow][newCol]).etat!=2) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
           grid[x][y].allumer();
             grid[newRow][newCol].setEtat(3); 
+        }else{
+            grid[x][y].cavalier();
         }
     }
     public void movehautdroite(int x,int y) {
@@ -136,9 +140,11 @@ public class Echiquier {
         int newRow = x - 2;
         int newCol = y + 1;
         
-        if (isValidMove(newRow, newCol)) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
           grid[x][y].allumer();
             grid[newRow][newCol].setEtat(3);  
+        }else{
+            grid[x][y].cavalier();
         }
     }
     public void movebasgauche(int x,int y) {
@@ -147,9 +153,11 @@ public class Echiquier {
         int newRow = x + 2;
         int newCol = y - 1;
         
-        if (isValidMove(newRow, newCol)) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
             grid[x][y].allumer();
             grid[newRow][newCol].setEtat(3);
+        }else{
+            grid[x][y].cavalier();
         }
     }
     public void movebasdroite(int x,int y) {
@@ -158,9 +166,11 @@ public class Echiquier {
         int newRow = x + 2;
         int newCol = y + 1;
         
-        if (isValidMove(newRow, newCol)) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
            grid[x][y].allumer();
             grid[newRow][newCol].setEtat(3);
+        }else{
+            grid[x][y].cavalier();
         }
     }
     
@@ -171,9 +181,11 @@ public class Echiquier {
         int newRow = x - 1;
         int newCol = y - 2;
         
-        if (isValidMove(newRow, newCol)) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
             grid[x][y].allumer();
             grid[newRow][newCol].setEtat(3);  
+        }else{
+            grid[x][y].cavalier();
         }
     }
     public void movegauchebas(int x,int y) {
@@ -182,9 +194,11 @@ public class Echiquier {
         int newRow = x + 1;
         int newCol = y - 2;
         
-        if (isValidMove(newRow, newCol)) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
       //      grid[x][y].eteindre();
             grid[newRow][newCol].setEtat(3);
+        }else{
+            grid[x][y].cavalier();
         }
     }
         public void movedroitehaut(int x,int y) {
@@ -193,9 +207,11 @@ public class Echiquier {
         int newRow = x - 1;
         int newCol = y + 2;
         
-        if (isValidMove(newRow, newCol)) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
             grid[x][y].allumer();
             grid[newRow][newCol].setEtat(3);
+        }else{
+            grid[x][y].cavalier();
         }
     }
                 public void movedroitebas(int x,int y) {
@@ -204,9 +220,11 @@ public class Echiquier {
         int newRow = x + 1;
         int newCol = y + 2;
         
-        if (isValidMove(newRow, newCol)) {
+        if (isValidMove(newRow, newCol) && (newRow!=5) && (newCol!=5) && (grid[newRow][newCol]).etat!=2) {
             grid[x][y].allumer();
             grid[newRow][newCol].setEtat(3);
+        }else{
+            grid[x][y].cavalier();
         }
     }
     public int CoordCavalierX (){
@@ -217,6 +235,7 @@ public class Echiquier {
                 }
             }
         }
+        System.out.println("mince!!!");
         return 0;
     }
         public int CoordCavalierY (){
@@ -227,6 +246,8 @@ public class Echiquier {
                 }
             }
         }
+                System.out.println("mince!!!");
+
         return 0;
     }
     
@@ -235,7 +256,14 @@ public class Echiquier {
 
     @Override
     public String toString() {
-        return "Echiquier{" + "taille=" + taille + ", grid=" + grid + '}';
+        String r = "\ngrille : \n";
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+            r+=grid[i][j].toString()+"|";
+            }
+            r+="\n";
+            }
+    return r;
     }
 }
 

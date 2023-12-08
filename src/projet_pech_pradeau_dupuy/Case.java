@@ -46,5 +46,10 @@ public boolean presenceCavalier(){
         return false;
 }
 
+    @Override
+    public String toString() {
+        return etat +"";
+    }
+
      
 }
