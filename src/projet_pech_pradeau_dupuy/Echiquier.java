@@ -89,8 +89,8 @@ public class Echiquier {
         int currentX = 5;
         int currentY = 5;
         Random random = new Random();
-
-        for (int i = 0; i <30; i++) {
+        
+        for (int i = 0; i <15; i++) {
             int randomDirection= random.nextInt(8); // 8 possible directions
 
             switch (randomDirection) {
@@ -120,6 +120,57 @@ public class Echiquier {
     //    grid[0][0].eteindre();
         grid[5][5].cavalier();
     }
+    
+    public void parcours1() {
+    int currentX = 5;
+    int currentY = 5;
+    Random random = new Random();
+    int tour = 0;
+
+    while (tour < 10) {
+        int originalX = currentX;
+        int originalY = currentY;
+
+        do {
+            int randomDirection = random.nextInt(8); // 8 possible directions
+
+            switch (randomDirection) {
+                case 0 -> movehautgauche(currentX, currentY);
+                case 1 -> movehautdroite(currentX, currentY);
+                case 2 -> movebasgauche(currentX, currentY);
+                case 3 -> movebasdroite(currentX, currentY);
+                case 4 -> movegauchehaut(currentX, currentY);
+                case 5 -> movegauchebas(currentX, currentY);
+                case 6 -> movedroitehaut(currentX, currentY);
+                case 7 -> movedroitebas(currentX, currentY);
+                default -> {
+                }
+            }
+
+            System.out.println("tour : " + (tour + 1));
+            System.out.println(currentX);
+            System.out.println(currentY);
+            grid[currentX][currentY].allumer();
+            System.out.println(this);
+            currentX = CoordCavalierX();
+            currentY = CoordCavalierY();
+        } while (currentX == originalX && currentY == originalY);
+
+        tour++;
+        
+        currentX = CoordCavalierX();
+        currentY = CoordCavalierY();
+        originalX = currentX;
+        originalY = currentY;
+        
+    }
+
+    // Set the final position after the loop
+    currentX = CoordCavalierX();
+    currentY = CoordCavalierY();
+    // grid[0][0].eteindre();
+    grid[5][5].cavalier();
+}
 
     public void movehautgauche(int x,int y) {
    //     int x = CoordCavalierX();

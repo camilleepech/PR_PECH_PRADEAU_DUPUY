@@ -142,7 +142,7 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
    // echiquier.deplacementPossible(ligne, colonne, newligne, newcolonne);
     //int etatverif = echiquier.grid[lignecliquee][colonnecliquee].getEtat();
     echiquier.verif(ligne, colonne, newligne, newcolonne);
-   if (echiquier.verif(ligne, colonne, newligne, newcolonne)==true){
+   if (echiquier.verif(ligne, colonne, newligne, newcolonne)==true && (echiquier.grid[newligne][newcolonne].getEtat()==2)){
      //   Point newcoord = new Point(newligne,newcolonne);
        // joueur.setPosition(newcoord);
        echiquier.grid[ligne][colonne].setEtat(1);
