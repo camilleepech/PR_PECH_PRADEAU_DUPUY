@@ -58,6 +58,7 @@ public class CavalierGraphique extends JButton {
         this.colonne = colonne;
     }
 
+    @Override
      protected void paintComponent(Graphics g) {
     int w = this.getWidth();
     int h = this.getHeight();
@@ -65,7 +66,7 @@ public class CavalierGraphique extends JButton {
 // Dessiner l'image
         Image image = icon.getImage();
         g.drawImage(image, 0,0, getWidth(), getHeight(), this);
-     g.setColor(Color.BLACK);
+     
     
     }
 }
