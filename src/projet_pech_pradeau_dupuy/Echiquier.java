@@ -182,7 +182,7 @@ public class Echiquier {
     while (tour < 10) {
         
         do {
-            int randomDirection = random.nextInt(8); // 8 possible directions
+            int randomDirection = random.nextInt(10); // 8 possible directions
 
             switch (randomDirection) {
                 case 0 -> movehautgauche(currentX, currentY);

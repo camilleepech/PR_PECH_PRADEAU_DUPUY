@@ -16,13 +16,14 @@ import java.awt.event.ActionListener;
 import java.awt.Point;
 public class FenetrePrincipale extends javax.swing.JFrame {
     Echiquier echiquier;
-    
+    private int compteur;
    
     /**
      * Creates new form FenetrePrincipale
      */
     public FenetrePrincipale() {
         initComponents();
+        compteur = 0;
         int taille = 10;
             this.echiquier= new Echiquier(taille);
         PanelEchiquier.setLayout(new GridLayout(taille, taille));
@@ -167,6 +168,18 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
 
         // }
    // System.out.println(joueur.position);
+   compteur++;
+       int a = echiquier.nombrelum();
+        if (a==0 && compteur == 10){
+            depart();
+            compteur = 0;
+        }
+        if (a!=0){
+            fenetredefaite f2 = new fenetredefaite();
+            f2.setVisible(true);
+            setVisible(false);
+        }
+   
     relance();
     repaint();
    }
