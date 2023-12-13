@@ -46,7 +46,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         
             }
         }
-        echiquier.parcours();
+       depart();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,7 +63,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelEchiquier.setBackground(new java.awt.Color(255, 153, 0));
+        PanelEchiquier.setBackground(new java.awt.Color(255, 255, 255));
         PanelEchiquier.setMaximumSize(new java.awt.Dimension(1440, 1080));
 
         javax.swing.GroupLayout PanelEchiquierLayout = new javax.swing.GroupLayout(PanelEchiquier);
@@ -129,6 +129,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             }}
         );
     }
+    private void depart(){
+            echiquier.parcours();
+            }
+            
 private void onCaseClicked(CaseGraphique caseCliquee) {
    // System.out.println(joueur.position);
     int newligne = caseCliquee.getLigne();

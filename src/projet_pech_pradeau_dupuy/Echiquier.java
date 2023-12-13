@@ -135,7 +135,7 @@ public class Echiquier {
          currentY = 5;
         grid[currentX][currentY].allumer();
       
-        for (int i = 0; i <7; i++) {
+        for (int i = 0; i <8; i++) {
             cpt++;
             int randomDirection= random.nextInt(8); // 8 possible directions
 
@@ -153,8 +153,8 @@ public class Echiquier {
                 
             }
             System.out.println("tour : " +i+1);
-            System.out.println(currentX);
-            System.out.println(currentY);
+            System.out.println("x"+currentX+"y"+currentY);
+          
             currentX = CoordCavalierX();
             currentY = CoordCavalierY();
             grid[currentX][currentY].allumer();
@@ -314,7 +314,7 @@ public class Echiquier {
             grid[x][y].cavalier();
         }
     }
-                public void movedroitebas(int x,int y) {
+        public void movedroitebas(int x,int y) {
        // int x = CoordCavalierX();
       //  int y = CoordCavalierY();
         int newRow = x + 1;
@@ -367,7 +367,7 @@ public class Echiquier {
             }
         }
                 
-                System.out.println("mince!!!");
+               
 
         return nb;
     }

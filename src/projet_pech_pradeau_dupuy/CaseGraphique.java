@@ -67,7 +67,7 @@ public class CaseGraphique extends JButton {
                 g.fillRect(2, 2, w - 4, h - 4);
 
         if (caseAssociee.getEtat() == 3) {
-            g.setColor(Color.blue);
+            g.setColor(Color.white);
        g.fillRect(2, 2, w - 4, h - 4);
 
         
