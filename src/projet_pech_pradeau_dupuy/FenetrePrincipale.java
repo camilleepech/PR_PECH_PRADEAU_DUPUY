@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.Point;
 public class FenetrePrincipale extends javax.swing.JFrame {
     Echiquier echiquier;
+    
    
     /**
      * Creates new form FenetrePrincipale
@@ -46,7 +47,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         
             }
         }
-       depart();
+       
+
+           depart();
+       
+        
+    
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -129,6 +136,12 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             }}
         );
     }
+    private void relance(){
+        int a = echiquier.nombrelum();
+        if (a==0){
+            depart();
+        }
+    }
     private void depart(){
             echiquier.parcours();
             }
@@ -154,7 +167,7 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
 
         // }
    // System.out.println(joueur.position);
-
+    relance();
     repaint();
    }
    
