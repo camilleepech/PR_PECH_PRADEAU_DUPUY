@@ -12,11 +12,17 @@ public class fenetredefaite extends javax.swing.JFrame {
 
     /**
      * Creates new form fenetredefaite
+     * @param score
      */
+    public fenetredefaite(int score) {
+        initComponents();
+
+        perduscore.setText("Perdu ! Score : " + score );
+        
+    }
     public fenetredefaite() {
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,11 +32,19 @@ public class fenetredefaite extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        perduscore = new javax.swing.JLabel();
+        rejouerbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("perdu bouffon");
+        perduscore.setText("perdu bouffon");
+
+        rejouerbtn.setText("REJOUER");
+        rejouerbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rejouerbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -38,19 +52,32 @@ public class fenetredefaite extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(169, 169, 169)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addComponent(perduscore, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(271, Short.MAX_VALUE)
+                .addComponent(rejouerbtn)
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
-                .addComponent(jLabel1)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addComponent(perduscore)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addComponent(rejouerbtn)
+                .addGap(27, 27, 27))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rejouerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejouerbtnActionPerformed
+        FenetrePrincipale fenetre = new FenetrePrincipale();
+        fenetre.setVisible(true);
+        setVisible(false);
+    // TODO add your handling code here:
+    }//GEN-LAST:event_rejouerbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,6 +115,7 @@ public class fenetredefaite extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel perduscore;
+    private javax.swing.JButton rejouerbtn;
     // End of variables declaration//GEN-END:variables
 }
