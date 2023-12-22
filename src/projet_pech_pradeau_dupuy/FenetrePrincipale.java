@@ -32,7 +32,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     }
     
 
-    public FenetrePrincipale(int partie) {
+    public FenetrePrincipale(int partie, int niv) {
         initComponents();
         partie1 = partie;
         compteur = 0;
@@ -60,7 +60,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             chronobtn.setVisible(false);
         }
         if (partie == 2){
-         nbSec = 60;
+            
+         nbSec = niv;
         ActionListener tache_recurrente = new ActionListener() {
             public void actionPerformed(ActionEvent e1) {
                 
@@ -216,9 +217,9 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
                 compteur = 0;
                 score ++;
                 scorebtn.setText("Score : " + score);
-                if (partie1==2 && score==3){
+                if (partie1==2 && score==1){
                     scorebtn.setText("gagné");
-                    fenetreVictoire f3 = new fenetreVictoire();
+                    fenetreVictoire f3 = new fenetreVictoire(nbSec);
                     f3.setVisible(true);
                     setVisible(false);
                 }
