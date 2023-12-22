@@ -21,6 +21,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     int nbSec;
     Timer chrono;
     int partie;
+    int partie1;
    
     /**
      * Creates new form FenetrePrincipale
@@ -33,6 +34,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
     public FenetrePrincipale(int partie) {
         initComponents();
+        partie1 = partie;
         compteur = 0;
         score = 0;
         int taille = 10;
@@ -67,6 +69,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 chronobtn.setText(nbSec + "");
                 if (nbSec == 0){
                     chrono.stop();
+                    fenetredefaite f2 = new fenetredefaite();
+                    f2.setVisible(true);
+                    setVisible(false);
                 }
             }
             ;
@@ -208,13 +213,20 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
    compteur++;
        int a = echiquier.nombrelum();
         if (a==0 && compteur == 10){
-            depart();
-            compteur = 0;
-            score ++;
-            scorebtn.setText("Score : " + score);
+                compteur = 0;
+                score ++;
+                scorebtn.setText("Score : " + score);
+                if (partie1==2 && score==3){
+                    scorebtn.setText("gagné");
+                    fenetreVictoire f3 = new fenetreVictoire();
+                    f3.setVisible(true);
+                    setVisible(false);
+                }
+                depart();
         }
         if (echiquier.verifMouvementsPossibles(newligne, newcolonne)==false && a!=0 ){
-           fenetredefaite f2 = new fenetredefaite(score);
+           
+            fenetredefaite f2 = new fenetredefaite(score);
           f2.setVisible(true);
           setVisible(false);
           depart();
