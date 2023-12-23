@@ -23,6 +23,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     int partie;
     int partie1;
     int jok;
+    int niv1;
+    boolean test;
    
     /**
      * Creates new form FenetrePrincipale
@@ -32,14 +34,21 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     initComponents();
     }
     
-
+    /**
+     *
+     * @param partie
+     * @param niv
+     * initialise une partie, avec ou non un chronometre selon le mode de jeu
+     */
     public FenetrePrincipale(int partie, int niv) {
         initComponents();
         partie1 = partie;
+        test = true;
         compteur = 0;
         score = 0;
         jok = 1;
         int taille = 10;
+        niv1=niv;
         this.echiquier= new Echiquier(taille);
         PanelEchiquier.setLayout(new GridLayout(taille, taille));
         
@@ -73,10 +82,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 chronobtn.setText(nbSec + "");
                 if (nbSec == 0){
                     chrono.stop();
+                    if (test==true){
                     fenetredefaite f2 = new fenetredefaite();
                     f2.setVisible(true);
                     setVisible(false);
-                }
+                }}
             }
             ;
         };
@@ -96,13 +106,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         PanelEchiquier = new javax.swing.JPanel();
-        chronobtn = new javax.swing.JButton();
-        joker = new javax.swing.JButton();
+        menuP = new javax.swing.JButton();
+        quitter = new javax.swing.JButton();
         scorebtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        joker = new javax.swing.JButton();
+        chronobtn = new javax.swing.JButton();
+        photoFond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -115,17 +125,42 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanelEchiquier.setLayout(PanelEchiquierLayout);
         PanelEchiquierLayout.setHorizontalGroup(
             PanelEchiquierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 553, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         PanelEchiquierLayout.setVerticalGroup(
             PanelEchiquierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 508, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
-        chronobtn.setBackground(new java.awt.Color(220, 218, 181));
-        chronobtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        chronobtn.setText("jButton1");
-        chronobtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        getContentPane().add(PanelEchiquier, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 510, 440));
+
+        menuP.setBackground(new java.awt.Color(220, 218, 181));
+        menuP.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        menuP.setText("MENU PRINCIPAL");
+        menuP.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        menuP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(menuP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, -1));
+
+        quitter.setBackground(new java.awt.Color(220, 218, 181));
+        quitter.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        quitter.setText("QUITTER");
+        quitter.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        quitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 610, 129, -1));
+
+        scorebtn.setBackground(new java.awt.Color(220, 218, 181));
+        scorebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        scorebtn.setText("SCORE : 0");
+        scorebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        getContentPane().add(scorebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, 100, 27));
 
         joker.setBackground(new java.awt.Color(220, 218, 181));
         joker.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
@@ -136,72 +171,16 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 jokerActionPerformed(evt);
             }
         });
+        getContentPane().add(joker, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 323, 100, 30));
 
-        scorebtn.setBackground(new java.awt.Color(220, 218, 181));
-        scorebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        scorebtn.setText("SCORE :");
-        scorebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        chronobtn.setBackground(new java.awt.Color(220, 218, 181));
+        chronobtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        chronobtn.setText("jButton1");
+        chronobtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        getContentPane().add(chronobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 210, 37, 34));
 
-        jButton1.setBackground(new java.awt.Color(220, 218, 181));
-        jButton1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton1.setText("MENU PRINCIPAL");
-        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-
-        jButton2.setBackground(new java.awt.Color(220, 218, 181));
-        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton2.setText("QUITTER");
-        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(PanelEchiquier, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(104, 104, 104)
-                                .addComponent(joker, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(246, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(chronobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(chronobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(joker))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(PanelEchiquier, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 660));
+        photoFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background2.png"))); // NOI18N
+        getContentPane().add(photoFond, new org.netbeans.lib.awtextra.AbsoluteConstraints(-530, 20, 1880, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,6 +192,16 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         repaint();
         jok--;
     }//GEN-LAST:event_jokerActionPerformed
+
+    private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
+     System.exit(0);   // TODO add your handling code here:
+    }//GEN-LAST:event_quitterActionPerformed
+
+    private void menuPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPActionPerformed
+     Fenetrebvn f4 = new Fenetrebvn ();
+     f4.setVisible(true);
+     setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_menuPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,8 +271,8 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
                 score ++;
                 scorebtn.setText("Score : " + score);
                 if (partie1==2 && score==3){
-                  //  scorebtn.setText("gagné");
-                    fenetreVictoire f3 = new fenetreVictoire(nbSec);
+                    test = false;
+                    fenetreVictoire f3 = new fenetreVictoire(niv1 - nbSec);
                     f3.setVisible(true);
                     setVisible(false);
                 }
@@ -306,10 +295,10 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelEchiquier;
     private javax.swing.JButton chronobtn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton joker;
+    private javax.swing.JButton menuP;
+    private javax.swing.JLabel photoFond;
+    private javax.swing.JButton quitter;
     private javax.swing.JButton scorebtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,93 +26,93 @@ public class Fenetrebvn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
+        moyenbtn = new javax.swing.JButton();
         partiesimple = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        facilebtn = new javax.swing.JButton();
+        difficilebtn = new javax.swing.JButton();
+        reglesbtn = new javax.swing.JButton();
+        quitter = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        photoFond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setBackground(new java.awt.Color(220, 218, 181));
-        jButton3.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton3.setText("MOYEN");
-        jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        moyenbtn.setBackground(new java.awt.Color(220, 218, 181));
+        moyenbtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        moyenbtn.setText("MOYEN");
+        moyenbtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        moyenbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                moyenbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, 70, 30));
+        getContentPane().add(moyenbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 70, 30));
 
         partiesimple.setBackground(new java.awt.Color(220, 218, 181));
         partiesimple.setFont(new java.awt.Font("Tempus Sans ITC", 3, 18)); // NOI18N
-        partiesimple.setText("JOUER");
+        partiesimple.setText("ARCADE");
         partiesimple.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(147, 79, 10)));
         partiesimple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 partiesimpleActionPerformed(evt);
             }
         });
-        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 560, 100, 40));
+        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 100, 40));
 
-        jButton2.setBackground(new java.awt.Color(220, 218, 181));
-        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton2.setText("FACILE");
-        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        facilebtn.setBackground(new java.awt.Color(220, 218, 181));
+        facilebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        facilebtn.setText("FACILE");
+        facilebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        facilebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                facilebtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 650, 70, 30));
+        getContentPane().add(facilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 70, 30));
 
-        jButton4.setBackground(new java.awt.Color(220, 218, 181));
-        jButton4.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton4.setText("DIFFICILE");
-        jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        difficilebtn.setBackground(new java.awt.Color(220, 218, 181));
+        difficilebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        difficilebtn.setText("DIFFICILE");
+        difficilebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        difficilebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                difficilebtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 650, 80, 30));
+        getContentPane().add(difficilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 540, 80, 30));
 
-        jButton1.setBackground(new java.awt.Color(220, 218, 181));
-        jButton1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton1.setText("Comment jouer ?");
-        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        reglesbtn.setBackground(new java.awt.Color(220, 218, 181));
+        reglesbtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        reglesbtn.setText("Comment jouer ?");
+        reglesbtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        reglesbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                reglesbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 700, 130, 30));
+        getContentPane().add(reglesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, 130, 30));
 
-        jButton5.setBackground(new java.awt.Color(220, 218, 181));
-        jButton5.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton5.setText("QUITTER");
-        jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        quitter.setBackground(new java.awt.Color(220, 218, 181));
+        quitter.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        quitter.setText("QUITTER");
+        quitter.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        quitter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                quitterActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 740, 130, 30));
+        getContentPane().add(quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, 130, 30));
 
         jButton6.setBackground(new java.awt.Color(220, 218, 181));
         jButton6.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
         jButton6.setText("CHRONO :");
         jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 610, 100, 30));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 100, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bienvenue.png"))); // NOI18N
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, -1));
+        photoFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bienvenue.png"))); // NOI18N
+        photoFond.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(photoFond, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,31 +123,32 @@ public class Fenetrebvn extends javax.swing.JFrame {
         setVisible(false);// TODO add your handling code here: // TODO add your handling code here:
     }//GEN-LAST:event_partiesimpleActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void facilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facilebtnActionPerformed
         FenetrePrincipale fenetre = new FenetrePrincipale(2,90);
         fenetre.setVisible(true);// TODO add your handling code here:
         setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_facilebtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void difficilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_difficilebtnActionPerformed
         FenetrePrincipale fenetre = new FenetrePrincipale(2,30);
         fenetre.setVisible(true);// TODO add your handling code here:
         setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_difficilebtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void moyenbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moyenbtnActionPerformed
         FenetrePrincipale fenetre = new FenetrePrincipale(2,60);
         fenetre.setVisible(true);// TODO add your handling code here:
         setVisible(false);// TODO add your handling code here:// TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_moyenbtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void reglesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reglesbtnActionPerformed
+     regles fen = new regles();
+     fen.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_reglesbtnActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
      System.exit(0);    // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_quitterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,13 +186,13 @@ public class Fenetrebvn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton difficilebtn;
+    private javax.swing.JButton facilebtn;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton moyenbtn;
     private javax.swing.JButton partiesimple;
+    private javax.swing.JLabel photoFond;
+    private javax.swing.JButton quitter;
+    private javax.swing.JButton reglesbtn;
     // End of variables declaration//GEN-END:variables
 }

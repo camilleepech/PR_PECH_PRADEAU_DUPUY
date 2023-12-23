@@ -34,8 +34,8 @@ public class fenetredefaite extends javax.swing.JFrame {
 
         menubtn = new javax.swing.JButton();
         perduscorebtn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        quitter = new javax.swing.JButton();
+        photoFond = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,29 +49,29 @@ public class fenetredefaite extends javax.swing.JFrame {
                 menubtnActionPerformed(evt);
             }
         });
-        getContentPane().add(menubtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 140, 30));
+        getContentPane().add(menubtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 140, 30));
 
         perduscorebtn.setBackground(new java.awt.Color(220, 218, 181));
-        perduscorebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        perduscorebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 18)); // NOI18N
         perduscorebtn.setText("SCORE");
         perduscorebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(147, 78, 10)));
-        getContentPane().add(perduscorebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 140, 50));
+        getContentPane().add(perduscorebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 140, 50));
 
-        jButton2.setBackground(new java.awt.Color(220, 218, 181));
-        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
-        jButton2.setText("QUITTER");
-        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        quitter.setBackground(new java.awt.Color(220, 218, 181));
+        quitter.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        quitter.setText("QUITTER");
+        quitter.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        quitter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                quitterActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, 140, 30));
+        getContentPane().add(quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 140, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/perdu.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(350, 680));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 980));
+        photoFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/perdu.png"))); // NOI18N
+        photoFond.setText("jLabel1");
+        photoFond.setPreferredSize(new java.awt.Dimension(350, 680));
+        getContentPane().add(photoFond, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 980));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -83,9 +83,9 @@ public class fenetredefaite extends javax.swing.JFrame {
     // TODO add your handling code here:
     }//GEN-LAST:event_menubtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
        System.exit(0); // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_quitterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,9 +123,9 @@ public class fenetredefaite extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton menubtn;
     private javax.swing.JButton perduscorebtn;
+    private javax.swing.JLabel photoFond;
+    private javax.swing.JButton quitter;
     // End of variables declaration//GEN-END:variables
 }

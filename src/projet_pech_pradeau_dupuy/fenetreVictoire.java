@@ -31,33 +31,70 @@ public class fenetreVictoire extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        vic = new javax.swing.JLabel();
+        vic = new javax.swing.JButton();
+        menuP = new javax.swing.JButton();
+        quitter = new javax.swing.JButton();
+        photoFond = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        vic.setText("Victoire");
+        vic.setBackground(new java.awt.Color(235, 235, 204));
+        vic.setFont(new java.awt.Font("Showcard Gothic", 0, 12)); // NOI18N
+        vic.setForeground(new java.awt.Color(218, 218, 63));
+        vic.setText("VIctoire");
+        vic.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(218, 218, 63)));
+        vic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vicActionPerformed(evt);
+            }
+        });
+        getContentPane().add(vic, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 220, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
-                .addComponent(vic, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(vic, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
-        );
+        menuP.setBackground(new java.awt.Color(220, 218, 181));
+        menuP.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        menuP.setText("MENU PRINCIPAL");
+        menuP.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        menuP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(menuP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 533, -1, 30));
+
+        quitter.setBackground(new java.awt.Color(220, 218, 181));
+        quitter.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        quitter.setText("QUITTER");
+        quitter.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        quitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 130, 30));
+
+        photoFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/victoire.png"))); // NOI18N
+        photoFond.setText("jLabel2");
+        getContentPane().add(photoFond, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -30, 1490, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void vicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vicActionPerformed
+
+    private void menuPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPActionPerformed
+      Fenetrebvn f = new Fenetrebvn();
+      f.setVisible(true);
+      setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_menuPActionPerformed
+
+    private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
+       System.exit(0); // TODO add your handling code here:
+    }//GEN-LAST:event_quitterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,6 +133,9 @@ public class fenetreVictoire extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel vic;
+    private javax.swing.JButton menuP;
+    private javax.swing.JLabel photoFond;
+    private javax.swing.JButton quitter;
+    private javax.swing.JButton vic;
     // End of variables declaration//GEN-END:variables
 }

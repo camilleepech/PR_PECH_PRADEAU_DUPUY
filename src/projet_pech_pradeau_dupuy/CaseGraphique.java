@@ -37,14 +37,27 @@ public class CaseGraphique extends JButton {
         this.colonne = colonne;
     }
 
+    /**
+     *
+     * @return ligne d'une case
+     */
     public int getLigne() {
         return ligne;
     }
 
+    /**
+     *
+     * @return colonne d'une case
+     */
     public int getColonne() {
         return colonne;
     }
 
+    /**
+     *
+     * @param colonne
+     * change la valeur de la colonne d'une case
+     */
     public void setColonne(int colonne) {
         this.colonne = colonne;
     }
@@ -59,12 +72,25 @@ public class CaseGraphique extends JButton {
         int w = this.getWidth();
         int h = this.getHeight();
         if (caseAssociee.getEtat() == 1) {
-            g.setColor(Color.getHSBColor(340, 33, 100));
+            g.setColor(Color.getHSBColor(10, 150, 100));
+            g.fillRect(4, 4, 50, 50);
         }
         if (caseAssociee.getEtat() == 2) {
             g.setColor(Color.white);
+                    BufferedImage image = null;
+        try {
+             image = ImageIO.read(new File("./src/Images/pion2.png"));
+        } catch (IOException e) {
+            System.out.println(e.getCause());
+            e.printStackTrace();
+
         }
-                g.fillRect(2, 2, w - 4, h - 4);
+      
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
+        ///g.setColor(Color.red);
+
+        }
+             //   g.fillRect(2, 2, w - 4, h - 4);
 
         if (caseAssociee.getEtat() == 3) {
             g.setColor(Color.white);
@@ -73,7 +99,7 @@ public class CaseGraphique extends JButton {
         
         BufferedImage image = null;
         try {
-             image = ImageIO.read(new File("./src/Images/cavalier.png"));
+             image = ImageIO.read(new File("./src/Images/cavalierfinal.png"));
         } catch (IOException e) {
             System.out.println(e.getCause());
             e.printStackTrace();
