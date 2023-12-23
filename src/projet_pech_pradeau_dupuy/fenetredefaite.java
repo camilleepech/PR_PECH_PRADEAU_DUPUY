@@ -17,7 +17,7 @@ public class fenetredefaite extends javax.swing.JFrame {
     public fenetredefaite(int score) {
         initComponents();
 
-        perduscore.setText("Perdu ! Score : " + score );
+        perduscorebtn.setText("Score : " + score );
         
     }
     public fenetredefaite() {
@@ -32,52 +32,60 @@ public class fenetredefaite extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        perduscore = new javax.swing.JLabel();
-        rejouerbtn = new javax.swing.JButton();
+        menubtn = new javax.swing.JButton();
+        perduscorebtn = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        perduscore.setText("perdu bouffon");
-
-        rejouerbtn.setText("REJOUER");
-        rejouerbtn.addActionListener(new java.awt.event.ActionListener() {
+        menubtn.setBackground(new java.awt.Color(220, 218, 181));
+        menubtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        menubtn.setText("MENU PRINCIPAL");
+        menubtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        menubtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rejouerbtnActionPerformed(evt);
+                menubtnActionPerformed(evt);
             }
         });
+        getContentPane().add(menubtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 140, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addComponent(perduscore, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
-                .addComponent(rejouerbtn)
-                .addGap(51, 51, 51))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(perduscore)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                .addComponent(rejouerbtn)
-                .addGap(27, 27, 27))
-        );
+        perduscorebtn.setBackground(new java.awt.Color(220, 218, 181));
+        perduscorebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        perduscorebtn.setText("SCORE");
+        perduscorebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(147, 78, 10)));
+        getContentPane().add(perduscorebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 140, 50));
+
+        jButton2.setBackground(new java.awt.Color(220, 218, 181));
+        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton2.setText("QUITTER");
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, 140, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/perdu.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(350, 680));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 980));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rejouerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejouerbtnActionPerformed
-        FenetrePrincipale fenetre = new FenetrePrincipale();
+    private void menubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menubtnActionPerformed
+        Fenetrebvn fenetre = new Fenetrebvn();
         fenetre.setVisible(true);
         setVisible(false);
     // TODO add your handling code here:
-    }//GEN-LAST:event_rejouerbtnActionPerformed
+    }//GEN-LAST:event_menubtnActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       System.exit(0); // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,7 +123,9 @@ public class fenetredefaite extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel perduscore;
-    private javax.swing.JButton rejouerbtn;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton menubtn;
+    private javax.swing.JButton perduscorebtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,81 +26,96 @@ public class Fenetrebvn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        partiesimple = new javax.swing.JButton();
-        chronometre = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        partiesimple = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Lucida Handwriting", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 153, 153));
-        jButton1.setText("START");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 100, 40));
-
-        partiesimple.setBackground(new java.awt.Color(255, 51, 255));
-        partiesimple.setText("simple");
-        partiesimple.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                partiesimpleActionPerformed(evt);
-            }
-        });
-        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 480, -1, -1));
-
-        chronometre.setText("chrono");
-        chronometre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chronometreActionPerformed(evt);
-            }
-        });
-        getContentPane().add(chronometre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
-
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, -1, -1));
-
-        jButton3.setText("jButton3");
+        jButton3.setBackground(new java.awt.Color(220, 218, 181));
+        jButton3.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton3.setText("MOYEN");
+        jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 510, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, 70, 30));
 
-        jButton4.setText("jButton4");
+        partiesimple.setBackground(new java.awt.Color(220, 218, 181));
+        partiesimple.setFont(new java.awt.Font("Tempus Sans ITC", 3, 18)); // NOI18N
+        partiesimple.setText("JOUER");
+        partiesimple.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(147, 79, 10)));
+        partiesimple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                partiesimpleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 560, 100, 40));
+
+        jButton2.setBackground(new java.awt.Color(220, 218, 181));
+        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton2.setText("FACILE");
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 650, 70, 30));
+
+        jButton4.setBackground(new java.awt.Color(220, 218, 181));
+        jButton4.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton4.setText("DIFFICILE");
+        jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 510, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 650, 80, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Image bienvenue.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jButton1.setBackground(new java.awt.Color(220, 218, 181));
+        jButton1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton1.setText("Comment jouer ?");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 700, 130, 30));
+
+        jButton5.setBackground(new java.awt.Color(220, 218, 181));
+        jButton5.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton5.setText("QUITTER");
+        jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 740, 130, 30));
+
+        jButton6.setBackground(new java.awt.Color(220, 218, 181));
+        jButton6.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton6.setText("CHRONO :");
+        jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 610, 100, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bienvenue.png"))); // NOI18N
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FenetrePrincipale fenetre = new FenetrePrincipale();
-        fenetre.setVisible(true);// TODO add your handling code here:
-        setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void partiesimpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partiesimpleActionPerformed
        FenetrePrincipale fenetre = new FenetrePrincipale(1,1);
@@ -108,17 +123,17 @@ public class Fenetrebvn extends javax.swing.JFrame {
         setVisible(false);// TODO add your handling code here: // TODO add your handling code here:
     }//GEN-LAST:event_partiesimpleActionPerformed
 
-    private void chronometreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chronometreActionPerformed
-        FenetrePrincipale fenetre = new FenetrePrincipale(2,30);
-        fenetre.setVisible(true);// TODO add your handling code here:
-        setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_chronometreActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         FenetrePrincipale fenetre = new FenetrePrincipale(2,90);
         fenetre.setVisible(true);// TODO add your handling code here:
         setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        FenetrePrincipale fenetre = new FenetrePrincipale(2,30);
+        fenetre.setVisible(true);// TODO add your handling code here:
+        setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         FenetrePrincipale fenetre = new FenetrePrincipale(2,60);
@@ -126,11 +141,13 @@ public class Fenetrebvn extends javax.swing.JFrame {
         setVisible(false);// TODO add your handling code here:// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        FenetrePrincipale fenetre = new FenetrePrincipale(2,30);
-        fenetre.setVisible(true);// TODO add your handling code here:
-        setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+     System.exit(0);    // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,11 +185,12 @@ public class Fenetrebvn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton chronometre;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton partiesimple;
     // End of variables declaration//GEN-END:variables

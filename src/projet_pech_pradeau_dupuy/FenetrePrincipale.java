@@ -98,9 +98,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         PanelEchiquier = new javax.swing.JPanel();
-        scorebtn = new javax.swing.JLabel();
         chronobtn = new javax.swing.JButton();
         joker = new javax.swing.JButton();
+        scorebtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,46 +122,83 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             .addGap(0, 508, Short.MAX_VALUE)
         );
 
-        scorebtn.setText("Score : 0");
-
+        chronobtn.setBackground(new java.awt.Color(220, 218, 181));
+        chronobtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
         chronobtn.setText("jButton1");
+        chronobtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
 
+        joker.setBackground(new java.awt.Color(220, 218, 181));
+        joker.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
         joker.setText("Relance");
+        joker.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
         joker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jokerActionPerformed(evt);
             }
         });
 
+        scorebtn.setBackground(new java.awt.Color(220, 218, 181));
+        scorebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        scorebtn.setText("SCORE :");
+        scorebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+
+        jButton1.setBackground(new java.awt.Color(220, 218, 181));
+        jButton1.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton1.setText("MENU PRINCIPAL");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+
+        jButton2.setBackground(new java.awt.Color(220, 218, 181));
+        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
+        jButton2.setText("QUITTER");
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(43, 43, 43)
                 .addComponent(PanelEchiquier, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chronobtn)
-                    .addComponent(joker))
-                .addContainerGap(221, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addComponent(joker, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(246, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(chronobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(PanelEchiquier, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(81, 81, 81)
+                        .addComponent(chronobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(joker))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(chronobtn)
-                        .addGap(65, 65, 65)
-                        .addComponent(joker)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addComponent(PanelEchiquier, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 660));
@@ -242,8 +281,8 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
                 compteur = 0;
                 score ++;
                 scorebtn.setText("Score : " + score);
-                if (partie1==2 && score==1){
-                    scorebtn.setText("gagné");
+                if (partie1==2 && score==3){
+                  //  scorebtn.setText("gagné");
                     fenetreVictoire f3 = new fenetreVictoire(nbSec);
                     f3.setVisible(true);
                     setVisible(false);
@@ -267,9 +306,11 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelEchiquier;
     private javax.swing.JButton chronobtn;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton joker;
-    private javax.swing.JLabel scorebtn;
+    private javax.swing.JButton scorebtn;
     // End of variables declaration//GEN-END:variables
 }
 
