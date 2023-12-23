@@ -47,7 +47,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 moyenbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(moyenbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 70, 30));
+        getContentPane().add(moyenbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, 70, 30));
 
         partiesimple.setBackground(new java.awt.Color(220, 218, 181));
         partiesimple.setFont(new java.awt.Font("Tempus Sans ITC", 3, 18)); // NOI18N
@@ -58,7 +58,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 partiesimpleActionPerformed(evt);
             }
         });
-        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 100, 40));
+        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 100, 40));
 
         facilebtn.setBackground(new java.awt.Color(220, 218, 181));
         facilebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
@@ -69,7 +69,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 facilebtnActionPerformed(evt);
             }
         });
-        getContentPane().add(facilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 70, 30));
+        getContentPane().add(facilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 70, 30));
 
         difficilebtn.setBackground(new java.awt.Color(220, 218, 181));
         difficilebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
@@ -80,7 +80,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 difficilebtnActionPerformed(evt);
             }
         });
-        getContentPane().add(difficilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 540, 80, 30));
+        getContentPane().add(difficilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 530, 80, 30));
 
         reglesbtn.setBackground(new java.awt.Color(220, 218, 181));
         reglesbtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
@@ -108,7 +108,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
         jButton6.setText("CHRONO :");
         jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 100, 30));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 100, 30));
 
         photoFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bienvenue.png"))); // NOI18N
         photoFond.setVerticalAlignment(javax.swing.SwingConstants.TOP);

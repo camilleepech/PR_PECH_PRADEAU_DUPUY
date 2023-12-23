@@ -72,8 +72,20 @@ public class CaseGraphique extends JButton {
         int w = this.getWidth();
         int h = this.getHeight();
         if (caseAssociee.getEtat() == 1) {
-            g.setColor(Color.getHSBColor(10, 150, 100));
-            g.fillRect(4, 4, 50, 50);
+             g.setColor(Color.white);
+                    BufferedImage image = null;
+        try {
+             image = ImageIO.read(new File("./src/Images/etat3.png"));
+        } catch (IOException e) {
+            System.out.println(e.getCause());
+            e.printStackTrace();
+
+        }
+      
+        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
+        ///g.setColor(Color.red);
+
+        
         }
         if (caseAssociee.getEtat() == 2) {
             g.setColor(Color.white);
