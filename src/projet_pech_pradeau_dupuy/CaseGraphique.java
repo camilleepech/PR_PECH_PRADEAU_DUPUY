@@ -72,26 +72,21 @@ public class CaseGraphique extends JButton {
         int w = this.getWidth();
         int h = this.getHeight();
         if (caseAssociee.getEtat() == 1) {
-             g.setColor(Color.white);
-                    BufferedImage image = null;
-        try {
-             image = ImageIO.read(new File("./src/Images/etat3.png"));
-        } catch (IOException e) {
-            System.out.println(e.getCause());
-            e.printStackTrace();
-
+        Color green2 = new Color(37, 109, 12);     
+        g.setColor(green2);
+        g.fillRect(2, 2, w - 4, h - 4);
         }
       
-        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
-        ///g.setColor(Color.red);
+      
+        //g.setColor(Color.red);
 
         
-        }
+        
         if (caseAssociee.getEtat() == 2) {
             g.setColor(Color.white);
                     BufferedImage image = null;
         try {
-             image = ImageIO.read(new File("./src/Images/pion2.png"));
+             image = ImageIO.read(new File("./src/Images/pion21.png"));
         } catch (IOException e) {
             System.out.println(e.getCause());
             e.printStackTrace();
@@ -111,7 +106,7 @@ public class CaseGraphique extends JButton {
         
         BufferedImage image = null;
         try {
-             image = ImageIO.read(new File("./src/Images/cavalierfinal.png"));
+             image = ImageIO.read(new File("./src/Images/cavalierfinal1.png"));
         } catch (IOException e) {
             System.out.println(e.getCause());
             e.printStackTrace();

@@ -143,7 +143,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 menuPActionPerformed(evt);
             }
         });
-        getContentPane().add(menuP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, -1));
+        getContentPane().add(menuP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, 30));
 
         quitter.setBackground(new java.awt.Color(220, 218, 181));
         quitter.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
@@ -154,13 +154,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 quitterActionPerformed(evt);
             }
         });
-        getContentPane().add(quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 610, 129, -1));
+        getContentPane().add(quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 610, 129, 30));
 
         scorebtn.setBackground(new java.awt.Color(220, 218, 181));
         scorebtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
         scorebtn.setText("SCORE : 0");
         scorebtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        getContentPane().add(scorebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, 100, 27));
+        getContentPane().add(scorebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, 100, 27));
 
         joker.setBackground(new java.awt.Color(220, 218, 181));
         joker.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
@@ -171,16 +171,16 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 jokerActionPerformed(evt);
             }
         });
-        getContentPane().add(joker, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 323, 100, 30));
+        getContentPane().add(joker, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 100, 30));
 
         chronobtn.setBackground(new java.awt.Color(220, 218, 181));
         chronobtn.setFont(new java.awt.Font("Tempus Sans ITC", 3, 14)); // NOI18N
         chronobtn.setText("jButton1");
         chronobtn.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(147, 78, 10)));
-        getContentPane().add(chronobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 210, 37, 34));
+        getContentPane().add(chronobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 210, 37, 34));
 
         photoFond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background2.png"))); // NOI18N
-        getContentPane().add(photoFond, new org.netbeans.lib.awtextra.AbsoluteConstraints(-530, 20, 1880, -1));
+        getContentPane().add(photoFond, new org.netbeans.lib.awtextra.AbsoluteConstraints(-750, 0, 1880, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
