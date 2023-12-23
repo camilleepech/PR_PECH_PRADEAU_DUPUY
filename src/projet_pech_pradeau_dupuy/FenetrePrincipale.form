@@ -42,6 +42,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="scorebtn" min="-2" pref="79" max="-2" attributes="0"/>
                       <Component id="chronobtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="joker" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="221" max="32767" attributes="0"/>
               </Group>
@@ -60,6 +61,8 @@
                           <Component id="scorebtn" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Component id="chronobtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="joker" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="87" max="32767" attributes="0"/>
@@ -103,6 +106,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="joker">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Relance"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jokerActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

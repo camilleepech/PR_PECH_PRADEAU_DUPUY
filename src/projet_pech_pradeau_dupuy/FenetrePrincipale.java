@@ -22,6 +22,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     Timer chrono;
     int partie;
     int partie1;
+    int jok;
    
     /**
      * Creates new form FenetrePrincipale
@@ -37,6 +38,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         partie1 = partie;
         compteur = 0;
         score = 0;
+        jok = 1;
         int taille = 10;
         this.echiquier= new Echiquier(taille);
         PanelEchiquier.setLayout(new GridLayout(taille, taille));
@@ -55,6 +57,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             }
         }
         depart();
+        
        
         if (partie==1){
             chronobtn.setVisible(false);
@@ -97,6 +100,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanelEchiquier = new javax.swing.JPanel();
         scorebtn = new javax.swing.JLabel();
         chronobtn = new javax.swing.JButton();
+        joker = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,6 +124,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
         chronobtn.setText("jButton1");
 
+        joker.setText("Relance");
+        joker.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jokerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,7 +141,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chronobtn))
+                    .addComponent(chronobtn)
+                    .addComponent(joker))
                 .addContainerGap(221, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,7 +156,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                         .addGap(99, 99, 99)
                         .addComponent(scorebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52)
-                        .addComponent(chronobtn)))
+                        .addComponent(chronobtn)
+                        .addGap(65, 65, 65)
+                        .addComponent(joker)))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -152,6 +166,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jokerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jokerActionPerformed
+        echiquier.eteindreTout();
+        depart();
+        joker.setVisible(false);
+        repaint();
+        jok--;
+    }//GEN-LAST:event_jokerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +218,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     }
     private void depart(){
             echiquier.parcours();
+            if (jok==1){
+                joker.setVisible(true);
+            }
             }
             
 private void onCaseClicked(CaseGraphique caseCliquee) {
@@ -204,7 +229,7 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
     int newcolonne = caseCliquee.getColonne();
     int ligne = echiquier.CoordCavalierX();
     int colonne = echiquier.CoordCavalierY();
-
+    joker.setVisible(false);
     echiquier.verif(ligne, colonne, newligne, newcolonne);
    if (echiquier.verif(ligne, colonne, newligne, newcolonne)==true && (echiquier.grid[newligne][newcolonne].getEtat()==2)){
 
@@ -243,6 +268,7 @@ private void onCaseClicked(CaseGraphique caseCliquee) {
     private javax.swing.JPanel PanelEchiquier;
     private javax.swing.JButton chronobtn;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton joker;
     private javax.swing.JLabel scorebtn;
     // End of variables declaration//GEN-END:variables
 }

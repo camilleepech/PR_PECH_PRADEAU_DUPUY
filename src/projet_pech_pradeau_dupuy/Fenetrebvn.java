@@ -47,7 +47,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 100, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 100, 40));
 
         partiesimple.setBackground(new java.awt.Color(255, 51, 255));
         partiesimple.setText("simple");
@@ -56,7 +56,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 partiesimpleActionPerformed(evt);
             }
         });
-        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
+        getContentPane().add(partiesimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 480, -1, -1));
 
         chronometre.setText("chrono");
         chronometre.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +72,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, -1, -1));
 
         jButton3.setText("jButton3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +80,7 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 510, -1, -1));
 
         jButton4.setText("jButton4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -88,10 +88,9 @@ public class Fenetrebvn extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 510, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Image bienvenue.png"))); // NOI18N
-        jLabel1.setText("chrono");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
